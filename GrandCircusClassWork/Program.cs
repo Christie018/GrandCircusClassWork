@@ -122,7 +122,7 @@ Console.WriteLine($"Your cost will be {area * perimeter * 200}");
 
 Console.ReadKey();
 
-/* Going through WS: Excersises about Strings, Numbers, and Console 1/22/24 */
+/* Going through Excersise about Strings, Numbers, and Console 1/22/24 */
 
 //Excersise 1.1 Echo String
 Console.WriteLine("Excersise 1.1 Echo String");
