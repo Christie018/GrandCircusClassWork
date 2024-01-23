@@ -1,0 +1,14 @@
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\bin\Debug\net8.0\GrandCircusClassWork.exe
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\bin\Debug\net8.0\GrandCircusClassWork.deps.json
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\bin\Debug\net8.0\GrandCircusClassWork.runtimeconfig.json
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\bin\Debug\net8.0\GrandCircusClassWork.dll
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\bin\Debug\net8.0\GrandCircusClassWork.pdb
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\obj\Debug\net8.0\GrandCircusClassWork.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\obj\Debug\net8.0\GrandCircusClassWork.AssemblyInfoInputs.cache
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\obj\Debug\net8.0\GrandCircusClassWork.AssemblyInfo.cs
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\obj\Debug\net8.0\GrandCircusClassWork.csproj.CoreCompileInputs.cache
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\obj\Debug\net8.0\GrandCircusClassWork.dll
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\obj\Debug\net8.0\refint\GrandCircusClassWork.dll
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\obj\Debug\net8.0\GrandCircusClassWork.pdb
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\obj\Debug\net8.0\GrandCircusClassWork.genruntimeconfig.cache
+C:\Users\MattieD\source\repos\GrandCircusClassWork\GrandCircusClassWork\obj\Debug\net8.0\ref\GrandCircusClassWork.dll
