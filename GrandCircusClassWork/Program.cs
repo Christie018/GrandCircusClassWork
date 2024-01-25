@@ -16,6 +16,7 @@
 /* Going through GC C# 1/22/24 in Class */
 using Microsoft.VisualBasic;
 using System.Net.Security;
+using System.Runtime.InteropServices;
 using System.Transactions;
 
 int x;
@@ -177,3 +178,153 @@ Console.WriteLine("Enter a boolean:");
 bool userInputBool = bool.Parse(Console.ReadLine());
 Console.WriteLine("You entered: " + userInputBool);
 Console.WriteLine("The opposite of what you entered is " + !userInputBool);
+
+/* 1/24/24 Class Work
+ * - Going over git version control and git flow 
+ - Starting w/ loops, switches, and conditionals
+- You have to have a break statement after switch cases
+- You should always have a  default at the end of a switch so that input doesn't break your code
+- */
+
+// Going through if loops
+
+int i = 0;
+
+int age = 12;
+
+if (age < 13)
+{
+    Console.WriteLine("You are a child");
+}
+else if (age < 18)
+{
+    Console.WriteLine("You are a teenager");
+} 
+else
+{
+    Console.WriteLine("You are an adult");
+}
+
+Console.Write("What ais the game score");
+int gameScore = int.Parse(Console.ReadLine());
+
+if (gameScore >= 90)
+{
+    Console.WriteLine("Good job!");
+}
+else if (gameScore >= 70)
+{
+    Console.WriteLine("You gotta do better than that!");
+}
+else
+{
+    Console.WriteLine("You suck");
+}
+
+Console.WriteLine("New Message");
+
+int dayNumber = 3;
+
+switch (dayNumber)
+{
+    case 1:
+        Console.WriteLine("Monday");
+        break;
+    case 2:
+        Console.WriteLine("Tuesday");
+        break;
+    case 3:
+        Console.WriteLine("Wednesday");
+        break;
+    case 4:
+        Console.WriteLine("Thursday");
+        break;
+    case 5:
+        Console.WriteLine("Friday");
+        break;
+    case 6:
+        Console.WriteLine("Saturday");
+        break;
+    case 7:
+        Console.WriteLine("Sunday");
+        break;
+    default:
+        Console.WriteLine("That's not a day of the week");
+        break;
+}
+
+Console.WriteLine("Select an option:\n 1.Play \n 2.Settings \n 3.Exit");
+int option = int.Parse(Console.ReadLine());
+// int option = int.Parse(userInput);
+
+switch (option)
+{
+    case 1:
+        Console.WriteLine("Starting game...");
+        break;
+    case 2:
+        Console.WriteLine("Settings for the game are very complicated...");
+        break;
+    case 3:
+        Console.WriteLine("Exiting game...");
+        break;
+    default:
+        break;
+}
+Console.WriteLine("How are you feeling today ?");
+// Fix Me userInput = Console.ReadLine(); //Bad
+
+/* FIX MEE switch(userInput.ToLower().Trim())
+{
+    case "bad":
+    case "sad":
+    case "unhappy":
+        Console.WriteLine("I'm sorry you aren't feeling great.");
+        break;
+    case "good":
+    case "great":
+    case "happy":
+        Console.WriteLine("I'm happy you feel that way");
+        break;
+    default:
+        Console.WriteLine("That's not a valid feeling.");
+        break;
+}
+*/
+
+for(i = 0; i < 10; i++)
+{
+    Console.WriteLine("Loop iteration {i}");
+//i++ happens
+}
+
+for (i = 10; i> 0; i--)
+{
+    Console.WriteLine($"Loop interation{i}");
+}
+
+
+for (i = 0; i < 20; i += 2);
+{
+    Console.WriteLine($"Loop iteration " + i);
+}
+
+int number = int.Parse(Console.ReadLine());
+
+for (i = 1; i<= number; i+=2)
+{
+    Console.WriteLine($"Loop iteration {i}");
+}
+
+for (int firstNumber = 1; firstNumber <=10; firstNumber++)
+{
+    Console.WriteLine($"Table for {firstNumber}");
+    
+    for (int secondNumber = 1; secondNumber <=10; secondNumber++)
+    {
+        Console.Write($"{firstNumber}*{secondNumber}");
+        Console.WriteLine($"{firstNumber + secondNumber}");
+    }
+    Console.WriteLine();
+}
+Console.ReadKey();
