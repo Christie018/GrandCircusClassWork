@@ -17,6 +17,7 @@
 using Microsoft.VisualBasic;
 using System.Net.Security;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Transactions;
 
 int x;
@@ -328,3 +329,206 @@ for (int firstNumber = 1; firstNumber <=10; firstNumber++)
     Console.WriteLine();
 }
 Console.ReadKey();
+
+/* 1/25/2024 Class Work */
+
+string userInput = "";
+
+bool continueLooping = true;
+
+while(continueLooping == true)
+{
+    Console.WriteLine("Do you want to play again (yes/no)?");
+    userInput = Console.ReadLine();
+
+    switch(userInput.ToLower().Trim())
+    {
+        case "yes":
+        case "y":
+            Console.WriteLine("Great, I love playing games with you.");
+            break;
+        default:
+            Console.WriteLine("You didn't say yes, so I'll see you later");
+            continueLooping = false;
+            break;
+    }
+}
+
+while (userInput.ToLower().Trim() != "exit")
+{
+    Console.Write("Enter your age (type 'exit' to stop): ");
+    userInput = Console.ReadLine();
+    try
+    {
+        age = int.Parse(userInput);
+        Console.WriteLine($"In 5 years, you will be {age + 5}.");
+    }
+    catch
+    {
+        if(userInput.ToLower().Trim() != "exit")
+        {
+            Console.WriteLine("You didn't enter an age");
+        }
+    }
+
+}
+
+bool playAgain;
+
+do
+{
+    Console.WriteLine("This is the spot where we play our game. Isn't it fun");
+    Console.WriteLine("Now our game is done");
+    Console.WriteLine("Do you want to play again");
+    playAgain = Console.ReadLine() == "y" ? true : false;
+}
+while (playAgain == true);
+
+int hoursWorked;
+double hourlyWage = 0.0;
+bool isDataValid = true;
+
+do
+{
+    Console.WriteLine("What is your hourly wage?");
+    userInput = Console.ReadLine();
+    try
+    {
+        hourlyWage = double.Parse(userInput);
+    }
+    catch (FormatException)
+    {
+        isDataValid = false;
+    }
+
+    if (isDataValid == true)
+    {
+        if (hourlyWage < 1) ;
+        {
+            isDataValid = false;
+        }
+    }
+}
+while (isDataValid == false);
+
+while (isDataValid = true);
+
+Console.WriteLine("Goodbye");
+
+Console.ReadKey();
+Environment.Exit(0);
+
+/* 1/29/24 Class Work
+ * - Going through learning methods today
+ * - If you're copying and pasting code, it should be made into a method
+ * - void means there's no return type
+ * - static is optional but will be gone into detail later in the course
+ * - You need to store values that get returned from calling methods
+- */
+
+//random number generator
+Random randomGenerator = new Random();
+
+int randomInteger = randomGenerator.Next();
+int newRandomInteger = randomGenerator.Next(1, 11);
+int diceRoll = randomGenerator.Next(1, 7);
+
+Console.WriteLine(); //Takes no input (parameters), give no output (return value)
+Console.ReadLine(); //Takes no input (has no parameters), give you the text that was entered (Returns string)
+Console.WriteLine("something"); //Takes input (has parameter), no return value
+age = int.Parse("53"); // has a parameter (expecting input), has a return type\
+
+DisplayGreeting();
+PrintNameAndAge("Scott", 35);
+sum = CalculateSum(2, 5);
+
+string userAge = "35";
+int validInteger = GetValidInteger(userAge);
+if (validInteger == -999)
+{
+    Console.WriteLine("You gave me a bad number");
+}
+
+Console.ReadKey();
+
+//creating method
+static void DisplayGreeting()
+{
+    Console.WriteLine("What's your name?");
+    string userName = Console.ReadLine();
+    Console.WriteLine($"Hello,{userName} welcome to my program!");
+    Console.WriteLine($"How old are you, {userName}?");
+    int userAge = GetValidInteger(Console.ReadLine());
+
+    PrintNameAndAge(userName, userAge);
+    Random randomGenerator = new Random();
+    int computerAge = randomGenerator.Next(userAge + 1, 200);
+    // FIX ME int ageDifference = CalculateDifference(computerAge, userAge);
+    // FIX ME string message = CreateGreeting(userName, ageDifference);
+    // FIX ME Console.WriteLine(message);
+}
+
+//Creating a method with two parameters
+static void PrintNameAndAge (string name, int age)
+{
+    name = "Jeff";
+    Console.WriteLine($"Your name is {name}. You are {age} years old.");
+}
+
+//creating method with 3 parameters
+static void PrimtNameAndTitle(string name, string title)
+{
+    Console.WriteLine($"Your name is {name}, your title is {title}");
+}
+
+//creating method that returns a value
+static int CalculateSum (int firstNumber, int secondNumber)
+{
+    int returnValue = firstNumber + secondNumber;
+    return returnValue;
+}
+
+static int GetValidInteger(string stringToCheck)
+{
+    int returnValue = 0;
+    try
+    {
+        returnValue = int.Parse(stringToCheck);
+    }
+    catch (FormatException)
+    {
+        returnValue = -999;
+    }
+    return returnValue;
+}
+
+static string CreatingGreeting(string name)
+{
+    return "$Hello,{ name }";
+}
+
+static int GetValidAge(string stringToCheck)
+{
+    int returnValue = 0;
+
+    do
+    {
+        try
+        {
+            returnValue = int.Parse(stringToCheck);
+        }
+        catch (FormatException)
+        {
+            returnValue = -1;
+        }
+
+        if (returnValue == -1)
+        {
+            Console.WriteLine("That is not an integer value. Please enter another value");
+            stringToCheck = Console.ReadLine();
+        }
+    }
+    while (returnValue < -1);
+
+    return returnValue;
+}
