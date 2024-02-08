@@ -15,6 +15,7 @@
 
 /* Going through GC C# 1/22/24 in Class */
 using Microsoft.VisualBasic;
+using System.Globalization;
 using System.Net.Security;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
@@ -427,7 +428,7 @@ Environment.Exit(0);
 - */
 
 //random number generator
-Random randomGenerator = new Random();
+Random randomGenerator = new();
 
 int randomInteger = randomGenerator.Next();
 int newRandomInteger = randomGenerator.Next(1, 11);
@@ -461,7 +462,7 @@ static void DisplayGreeting()
     int userAge = GetValidInteger(Console.ReadLine());
 
     PrintNameAndAge(userName, userAge);
-    Random randomGenerator = new Random();
+    Random randomGenerator = new();
     int computerAge = randomGenerator.Next(userAge + 1, 200);
     // FIX ME int ageDifference = CalculateDifference(computerAge, userAge);
     // FIX ME string message = CreateGreeting(userName, ageDifference);
@@ -532,3 +533,65 @@ static int GetValidAge(string stringToCheck)
 
     return returnValue;
 }
+
+//Unit 3
+/* 2/7/2024 Class work */
+
+//A dictionary is made up of elements
+//Each element has 2 pieces of information: key and value
+
+Dictionary<string, string> capitals = new()
+{
+    {"Japan","Tokyo" },
+    {"Russia","Moscow" }
+};
+capitals.Add("France", "Paris");
+capitals.Add("Italy", "Rome");
+
+//The key for this dictionary is the student ID
+Dictionary<int, string> studentNames = new();
+studentNames.Add(12345, "Mattie D UC");
+studentNames.Add(123456, "Test");
+
+Dictionary<Guid, string> games = new();
+games.Add(Guid.NewGuid(), "Name of the game");
+
+Console.WriteLine("What is your birthdate (mm/dd/yyyy)"); // 01/23/1971
+string input = Console.ReadLine();
+string[] dateParts = input.Split("/");
+int birthMonth = int.Parse(dateParts[0]);
+
+Dictionary<int, string> months = new()
+{
+    {1,"January" },
+    {2,"February" },
+    {3,"March" },
+    {4,"May" }
+};
+
+months.Remove(2);
+Console.WriteLine($"Your were born in the month of {months[birthMonth]}");
+
+Dictionary<string, int> lunchVotes = new()
+{
+    {"pizza", 0 },
+    {"subs", 0 },
+    {"burgers", 0}
+};
+
+Console.WriteLine("What's for lunch todat, here are the current votes:");
+
+foreach(var item in lunchVotes)
+{
+    Console.WriteLine($"{item.Key} has {item.Value} votes.");
+}
+
+Console.WriteLine("Enter the item you want");
+input = Console.ReadLine();
+
+if (lunchVotes.Keys.Contains(input.ToLower())) ;
+{
+    lunchVotes[input.ToLower()]++;
+}
+
+Console.ReadKey();
