@@ -640,3 +640,39 @@ int newMax = nums.Where(x => x < 10000).Max();
 int[] lowNumbers = nums.Where(x => x > 10 && x < 100).ToArray();
 int[] highNumbers = nums.Where(x => x >= 100000 && x <= 999999).ToArray();
 var evenNumberCount = nums.Where(x => x % 2 == 0).Count();
+
+bool continueLoop = true;
+while (continueLoop)
+{
+    try
+    {
+        Console.WriteLine("Enter the amount of students for the pizza party:");
+        int numberOfStudent = int.Parse(Console.ReadLine());
+        int numberOfSlices = 48;
+        string nonNumeric = "abc";
+        int result = int.Parse(nonNumeric);
+
+        int[] numbers2 = new int[] { 1, 2, 3 };
+        int numbers3 = numbers2[3];
+
+        Console.WriteLine($"Each student gets {numberOfSlices / numberOfStudent} slices.");
+    }
+    catch (FormatException ex)
+    {
+        Console.WriteLine("Hey smarty pants, you didn't give me a number. Give me a real number!");
+    }
+    catch (DivideByZeroException ex)
+    {
+        Console.WriteLine("Zero student ed! No pizze for you!");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"An exception occured: {ex.Message}");
+    }
+    finally
+    {
+        //Close connection and files; runs code weither exception is found or not
+    }
+}
+
+Console.ReadKey();
