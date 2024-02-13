@@ -595,3 +595,48 @@ if (lunchVotes.Keys.Contains(input.ToLower())) ;
 }
 
 Console.ReadKey();
+
+/* 2/12/2024 Class Work */
+
+//Simple anonymous function
+int Multiply(int x)
+{
+    return x * x;
+}
+
+//(input params) => expression
+// x => x * x;
+
+List<int> numbers = new List<int> { 1, 2, 3, 5, 6, 7, 12, 13, 14, 12, 16 };
+List<int> evenNumbers = numbers.FindAll(x => x % 2 == 0).Where(x => x > 10).Distinct().ToList();
+
+int maxValue = numbers.Max();
+
+string[] names = new string[] { "Alice", "Bob", "Alex", "Anna" };
+List<string> nameList = new List<string>();
+nameList.AddRange(names);
+List<string> namesStartingWithA = names.Where(x => x.StartsWith("A")).OrderByDescending(x => x).ToList();
+
+var namesWithQuery = from name in names
+                     where name.StartsWith("A") && name.EndsWith("a")
+                     orderby name descending
+                     select name;
+
+namesStartingWithA.Add("Annabelle");
+
+/*
+ * Find the minumum value
+ * find the max
+ * find the max value less than 10000
+ * Find all the values between 100000 and 999999 inclusive
+ * Count all the even numbers 
+ */
+
+int[] nums = { 10, 2330, 112233, 12, 949, 3764, 2942, 523863 };
+
+int min = nums.Min();
+int max = nums.Max();
+int newMax = nums.Where(x => x < 10000).Max();
+int[] lowNumbers = nums.Where(x => x > 10 && x < 100).ToArray();
+int[] highNumbers = nums.Where(x => x >= 100000 && x <= 999999).ToArray();
+var evenNumberCount = nums.Where(x => x % 2 == 0).Count();
