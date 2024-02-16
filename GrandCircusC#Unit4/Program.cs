@@ -8,6 +8,10 @@ Inventory inventory = new Inventory();
 
 Console.WriteLine("Let's populate our inventory");
 
+string message = "What color am I?";
+ConsoleFormatter.DisplayMessageInRed(message);
+ConsoleFormatter.DisplayMessageInBlue(message);
+
 while (true)
 {
     Console.Write("What is the name of the product");
@@ -49,7 +53,15 @@ if (doesItemExist == false)
 Product chosenItem = inventory.InventoryList.Where(x => x.Name.ToLower() == item).First();
 
 Console.WriteLine("How many do you want?");
-int amount = int.Parse(Console.ReadLine());
+string answer = Console.ReadLine();
+bool isValidNumber = Validator.isValidInteger(answer, 1, chosenItem.CurrentQuantity, out int amount);
+
+//static class and static method
+if (isValidNumber == false)
+{
+    Console.WriteLine("You entered an invalid option. Please check the quantity and enter a valid integer.");
+}
+
 double cost = chosenItem.PurchaseItem(amount);
 
 DiscountManager discount = new DiscountManager();

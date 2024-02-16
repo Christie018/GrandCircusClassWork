@@ -8,12 +8,15 @@ namespace GrandCircusC_Unit4
 {
     public class Product
     {
-        //properties
+        //private properties
         private int data = 0;
+
+        //properties
         public string Name { get; set; }
         public double Price { get; set; }
         public int CurrentQuantity { get; set; }
 
+        //constructors
         public Product (string name, double price = 0, int quantity = 1)
         {
             Name = name;

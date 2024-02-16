@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GrandCircusC#Unit4")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c0d5553771c53b25dee217290aa36a5106c074a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4301cceca339040fed940f837911bdf3ff42e4c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("GrandCircusC#Unit4")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GrandCircusC#Unit4")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
